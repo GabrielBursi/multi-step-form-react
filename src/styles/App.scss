@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    background-color: #eef5ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main{
+    height: 80%;
+    width: 70%;
+    background-color: #ffffff;
+    border: 3px solid red;
+    padding: 1% 0 1% 1%;
+    display: flex;
+    border-radius: 10px;
+
+    .aside{
+        width: 30%;
+        height: 100%;
+        border-radius: 10px;
+        background: url('../../template/assets/images/bg-sidebar-desktop.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: 3px solid green;
+
+        .cont-steps{
+            border: 1px solid pink;
+            height: 50%;
+            padding: 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            .step{
+                border: 1px solid yellow;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: 100%;
+                height: 20%;
+
+                .text-step{
+                    border: 1px solid red;
+                }
+    
+                .step-number{
+                    border: 1px solid red;
+                    background-color: transparent;
+                    border-radius: 100%;
+                    width: 15%;
+                    height: 80%;
+                    text-align: center;
+                    margin-right: 2%;
+                }
+            }
+        }
+
+    }
+
+    .personal-info{
+        padding: 4% 10%;
+        width: 70%;
+        height: 100%;
+        border: 3px solid green;
+        display: flex;
+        flex-direction: column;
+
+        h1{
+            margin-bottom: 3%;
+            font-size: 3rem;
+        }
+
+        span{
+            margin-bottom: 6%;
+            font-size: 1rem;
+        }
+
+        .form{
+            font-size: 1.5rem;
+            border: 3px solid blue;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+
+            .cont-inp{
+                border: 3px solid green;
+                height: 20%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+
+            input{
+                height: 80%;
+                font-size: 20px;
+                border-radius: 10px;
+                padding: 2%;
+                margin-top: 2%;
+            }
+
+            button{
+                align-self: flex-end;
+                width: 35%;
+                height: 15%;
+                border-radius: 10px;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+        }
+    }
+}

@@ -5,6 +5,7 @@
 /template
 /.pnp
 .pnp.js
+/text
 
 # testing
 /coverage
