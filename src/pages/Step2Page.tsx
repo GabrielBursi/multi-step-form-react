@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 import IconArcade from '../images/icon-arcade.svg';
 import IconAdvanced from '../images/icon-advanced.svg';
 import IconPro from '../images/icon-pro.svg';
