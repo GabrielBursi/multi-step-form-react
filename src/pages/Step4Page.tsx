@@ -1,10 +1,10 @@
 import React from 'react';
 
 function Step4Page() {
-    return (
-        <>
-        </>
-    );
+	return (
+		<>
+		</>
+	);
 }
 
 export default Step4Page;

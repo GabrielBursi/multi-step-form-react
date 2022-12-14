@@ -6,7 +6,8 @@
 /.pnp
 .pnp.js
 /text
-
+.hintrc
+/text.txt
 # testing
 /coverage
 

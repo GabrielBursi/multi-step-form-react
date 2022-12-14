@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 
 function Step3Page() {
-    return (
-        <>
-        </>
-    );
+	return (
+		<>
+		</>
+	);
 }
 
 export default Step3Page;
