@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 $primary-color: #03295a;
-$secondary-color: #c6c7cb;
+$secondary-color: #a5a5a5;
+$third-color: #F2F1F0;
 $bg-color: #f7feff;
 *{
     padding: 0;
@@ -32,7 +33,7 @@ $bg-color: #f7feff;
         width: 30%;
         height: 100%;
         border-radius: 10px;
-        background: url('../../template/assets/images/bg-sidebar-desktop.svg');
+        background: url('../images/bg-sidebar-desktop.svg');
         background-repeat: no-repeat;
         background-size: cover;
         // border: 3px solid green;
@@ -118,7 +119,7 @@ $bg-color: #f7feff;
 
         .form{
             font-size: 1.5rem;
-            border: 3px solid blue;
+            // border: 3px solid blue;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -173,7 +174,7 @@ $bg-color: #f7feff;
     padding: 4% 10%;
     width: 70%;
     height: 100%;
-    border: 3px solid green;
+    // border: 3px solid green;
     display: flex;
     flex-direction: column;
 
@@ -190,23 +191,79 @@ $bg-color: #f7feff;
     }
     .cont{
         font-size: 1.5rem;
-        border: 3px solid blue;
+        // border: 3px solid blue;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
         .options-cont{
-            border: 3px solid red;
+            // border: 3px solid red;
             height: 70%;
     
             .options{
-                border: 3px solid green;
+                // border: 3px solid green;
                 height: 80%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 2%;
+
+                .plan-options{
+                    border: 1px solid $secondary-color;
+                    border-radius: 10px;
+                    height: 100%;
+                    width: 30%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    padding: 2%;
+                    cursor: pointer;
+                    transition: .4s;
+                    &:hover{
+                        background-color: $third-color;
+                        border: 1px solid $primary-color;
+                        img{
+                            width: 4.5rem;
+                        }
+                    }
+
+                    img{
+                        width:4rem;
+                        transition: 0.1s;
+
+                    }
+
+                    .plan{
+                        // border: 1px solid red;
+                        height: 50%;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-evenly;
+
+                        p{
+                            color: $primary-color;
+                            font-weight: bold;
+                            font-size: 24px;
+                        }
+
+                        .price{
+                            font-size: 1.2rem;
+                        }
+
+                        .bonus{
+                            color: $primary-color;
+                            font-weight: 500;
+                            font-size: 18px;
+                        }
+                    }
+                }
             }
             .toggle{
-                border: 3px solid purple;
+                // border: 3px solid purple;
                 height: 20%;
-                background-color: $secondary-color;
+                background-color: $third-color;
                 border-radius: 10px;
                 display: flex;
                 justify-content: center;
@@ -217,14 +274,14 @@ $bg-color: #f7feff;
                     display: flex;
                     justify-content: space-evenly;
                     align-items: center;
-                    font-size: 1.5rem;
+                    font-size: 1.2rem;
                 }
             }
         }
 
         .btn-cont{
             height: 15%;
-            border: 3px solid red;
+            // border: 3px solid red;
             display: flex;
             justify-content: space-between;
             #next-step{
@@ -247,6 +304,10 @@ $bg-color: #f7feff;
                 color: $secondary-color;
                 background-color: transparent;
                 font-weight: 700;
+                transition: .4s;
+                &:hover{
+                    color: $primary-color;
+                }
             }
         }
     }
@@ -272,7 +333,7 @@ $bg-color: #f7feff;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: $primary-color;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -280,7 +341,7 @@ $bg-color: #f7feff;
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
+  height: 24px;
   width: 26px;
   left: 4px;
   bottom: 4px;

@@ -8,6 +8,7 @@
 /text
 .hintrc
 /text.txt
+/src/design
 # testing
 /coverage
 
