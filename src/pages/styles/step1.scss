@@ -1,0 +1,22 @@
+.personal-info{
+        padding: 4% 10%;
+        width: 70%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .form{
+            font-size: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+
+            .cont-inp{
+                height: 20%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './styles/step1.scss';
+
 function Step1Page() {
 	return (
 		<div className='personal-info'>

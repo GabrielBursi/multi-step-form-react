@@ -5,6 +5,8 @@ import IconArcade from '../images/icon-arcade.svg';
 import IconAdvanced from '../images/icon-advanced.svg';
 import IconPro from '../images/icon-pro.svg';
 
+import './styles/step2.scss';
+
 function Step2Page() {
 	return (
 		<div className='select-plan'>
@@ -40,12 +42,12 @@ function Step2Page() {
 					</div>
 					<div className='toggle'>
 						<div className='toggle-text'>
-							<p>Monthly</p>
+							<p className='period'>Monthly</p>
 							<label htmlFor='inp-toggle' className='switch'>
 								<input id='inp-toggle' type="checkbox"/>
 								<span className="slider round"></span>
 							</label>
-							<p>Yearly</p>
+							<p className='period'>Yearly</p>
 						</div>
 					</div>
 				</div>

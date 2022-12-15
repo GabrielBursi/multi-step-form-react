@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './styles/step3.scss';
+
 function Step3Page() {
 	return (
 		<div className='add-ons'>

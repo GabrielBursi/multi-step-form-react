@@ -1,0 +1,15 @@
+@import '../../styles/colors.scss';
+.add-ons{
+    border: 1px solid red;
+    padding: 4% 10%;
+    width: 70%;
+    height: 100%;
+
+    p{
+        color: $primary-color;
+    }
+
+    .plus-price{
+        color: $checkbox-color;
+    }
+}
