@@ -1,5 +1,6 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
+import CompletePage from './pages/CompletePage';
 
 import Step1Page from './pages/Step1Page';
 import Step2Page from './pages/Step2Page';
@@ -13,6 +14,7 @@ function RoutesSteps() {
 			<Route path='/step2' element={<Step2Page/>}/>
 			<Route path='/step3' element={<Step3Page/>}/>
 			<Route path='/step4' element={<Step4Page/>}/>
+			<Route path='/complete' element={<CompletePage/>}/>
 		</Routes>
 	);
 }
