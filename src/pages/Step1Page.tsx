@@ -4,10 +4,10 @@ import './styles/step1.scss';
 
 function Step1Page() {
 	return (
-		<div className='personal-info'>
+		<div className='container-pri'>
 			<h1>Personal info</h1>
 			<span>Please provide your name, email address, and Phone number.</span>
-			<form className='form'>
+			<form className='container-sec'>
 				<div className='cont-inp'>
 					<label htmlFor='name'>Name</label>
 					<input type="text" name="name" id="name" className='inp' placeholder='e.g. Gabriel Bursi' autoComplete='off'/>

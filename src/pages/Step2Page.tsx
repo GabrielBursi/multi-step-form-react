@@ -9,10 +9,10 @@ import './styles/step2.scss';
 
 function Step2Page() {
 	return (
-		<div className='select-plan'>
+		<div className='container-pri'>
 			<h1>Select your plan</h1>
 			<span>You have the option of monthly or yearly billing.</span>
-			<div className='cont'>
+			<div className='container-sec'>
 				<div className='options-cont'>
 					<div className="options">   
 						<div className='plan-options'>
