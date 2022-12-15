@@ -13,7 +13,7 @@ function Step2Page() {
 			<h1>Select your plan</h1>
 			<span>You have the option of monthly or yearly billing.</span>
 			<div className='container-sec'>
-				<div className='options-cont'>
+				<div className='container-ter'>
 					<div className="options">   
 						<div className='plan-options'>
 							<img src={IconArcade} alt='arcade-icon'></img>

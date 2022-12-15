@@ -1,15 +1,62 @@
 @import '../../styles/colors.scss';
-.add-ons{
-    border: 1px solid red;
-    padding: 4% 10%;
-    width: 70%;
-    height: 100%;
 
-    p{
-        color: $primary-color;
-    }
 
-    .plus-price{
-        color: $checkbox-color;
+.container-ons{
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .add-on{
+        border: 0.5px solid $secondary-color;
+        height: 30%;
+        border-radius: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: .4s;
+        &:hover{
+            background-color: $third-color;
+            border: 1px solid $checkbox-color;
+        }
+
+        .on-desc{
+            width: 70%;
+            height: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+            input{
+                height: 100%;
+                width: 5%;
+                border-radius: 10%;
+
+                &:checked{
+                }
+            }
+
+            .on-text{
+                width: 80%;
+            }
+        }
+        
+        .name-service{
+            color: $primary-color;
+        }
+        
+        .plus-price{
+            width: 20%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            span{
+                font-size: 1rem;
+                color: $checkbox-color;
+                font-weight: bold;
+            }
+        }
     }
 }
