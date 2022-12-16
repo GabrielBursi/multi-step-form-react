@@ -1,4 +1,5 @@
 import React from 'react';
+import ButtonNext from '../components/ButtonNext';
 
 import './styles/step1.scss';
 
@@ -20,7 +21,7 @@ function Step1Page() {
 					<label htmlFor='phone'>Phone Number</label>
 					<input type="tel" name="phone" id="phone" className='inp' placeholder='e.g. +1 234 567 890' autoComplete='off'/>
 				</div>
-				<button>Next Step</button>
+				<ButtonNext nav='' text='Next Step'/>
 			</form>
 		</div>
 	);
