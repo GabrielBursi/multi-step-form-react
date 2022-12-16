@@ -13,32 +13,32 @@ function Step2Page() {
 	return (
 		<div className='container-pri'>
 			<h1>Select your plan</h1>
-			<span>You have the option of monthly or yearly billing.</span>
+			<p className='sub-titulo all-text'>You have the option of monthly or yearly billing.</p>
 			<div className='container-sec'>
 				<div className='container-ter'>
 					<div className="options">   
 						<div className='plan-options'>
 							<img src={IconArcade} alt='arcade-icon'></img>
 							<div className='plan'>
-								<p>Arcade</p>
-								<span className='price'>$90/yr</span>
-								<span className='bonus'>2 months free</span>
+								<p className='name-plan'>Arcade</p>
+								<p className='price all-text'>$90/yr</p>
+								<p className='bonus'>2 months free</p>
 							</div>
 						</div>
 						<div className='plan-options'>
 							<img src={IconAdvanced} alt='arcade-icon'></img>
 							<div className='plan'>
-								<p>Advanced</p>
-								<span className='price'>$120/yr</span>
-								<span className='bonus'>2 months free</span>
+								<p className='name-plan'>Advanced</p>
+								<p className='price all-text'>$120/yr</p>
+								<p className='bonus'>2 months free</p>
 							</div>
 						</div>
 						<div className='plan-options'>
 							<img src={IconPro} alt='arcade-icon'></img>
 							<div className='plan'>
-								<p>Pro</p>
-								<span className='price'>$150/yr</span>
-								<span className='bonus'>2 months free</span>
+								<p className='name-plan'>Pro</p>
+								<p className='all-text'>$150/yr</p>
+								<p className='bonus'>2 months free</p>
 							</div>
 						</div>
 					</div>
@@ -47,7 +47,7 @@ function Step2Page() {
 							<p className='period'>Monthly</p>
 							<label htmlFor='inp-toggle' className='switch'>
 								<input id='inp-toggle' type="checkbox"/>
-								<span className="slider round"></span>
+								<p className="slider round"></p>
 							</label>
 							<p className='period'>Yearly</p>
 						</div>

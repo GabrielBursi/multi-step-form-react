@@ -41,6 +41,11 @@
         
         .name-service{
             color: $primary-color;
+            font-weight: bold;
+        }
+
+        .description-service{
+            font-size: 1.2rem;
         }
         
         .plus-price{
@@ -49,11 +54,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            span{
-                font-size: 1rem;
-                color: $checkbox-color;
-                font-weight: bold;
-            }
+            font-size: 1.2rem;
+            color: $checkbox-color;
+            font-weight: 500;
         }
     }
 }

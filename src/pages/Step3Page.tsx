@@ -8,7 +8,7 @@ function Step3Page() {
 	return (
 		<div className='container-pri'>
 			<h1>Pick add-ons</h1>
-			<span>Add-ons help Add-ons help enhance your gaming experience. your gaming experience.</span>
+			<p className='sub-titulo all-text'>Add-ons help Add-ons help enhance your gaming experience. your gaming experience.</p>
 			<div className='container-sec'>
 				<div className='container-ons'>
 					<div className='add-on'>
@@ -16,11 +16,11 @@ function Step3Page() {
 							<input type="checkbox" name="check1" id="check1" />
 							<div className='on-text'>
 								<p className='name-service'>Online service</p>
-								<span className='description-service'>Access to multiplayer games</span>
+								<p className='description-service all-text'>Access to multiplayer games</p>
 							</div>
 						</div>
 						<div className='plus-price'>
-							<span>+$10/yr</span>
+							<p>+$10/yr</p>
 						</div>
 					</div>
 					<div className='add-on'>
@@ -28,11 +28,11 @@ function Step3Page() {
 							<input type="checkbox" name="check2" id="check2"/>
 							<div className='on-text'>
 								<p className='name-service'>Larger storage</p>
-								<span className='description-service'>Extra 1TB of cloud save</span>
+								<p className='description-service all-text'>Extra 1TB of cloud save</p>
 							</div>
 						</div>
 						<div className='plus-price'>
-							<span>+$20/yr</span>
+							<p>+$20/yr</p>
 						</div>
 					</div>
 					<div className='add-on'>
@@ -40,11 +40,11 @@ function Step3Page() {
 							<input type="checkbox" name="check3" id="check3" />
 							<div className='on-text'>
 								<p className='name-service'>Customizable profile</p>
-								<span className='description-service'>Custom theme on your profile</span>
+								<p className='description-service all-text'>Custom theme on your profile</p>
 							</div>
 						</div>
 						<div className='plus-price'>
-							<span>+$20/yr</span>
+							<p>+$20/yr</p>
 						</div>
 					</div>
 				</div>

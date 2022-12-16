@@ -8,7 +8,7 @@ function Step4Page() {
 	return (
 		<div className='container-pri'>
 			<h1>Finishing up</h1> 
-			<span>Double-check everything looks OK before confirming.</span>
+			<p className='sub-titulo all-text'>Double-check everything looks OK before confirming.</p>
 			<div className='container-sec'>
 				<div className='finishing-up'>
 					<div className='total-options'>
@@ -18,17 +18,17 @@ function Step4Page() {
 						</div>
 						<div className='ons-choice'>
 							<div className='ons-select'>
-								<p>Online service</p>
+								<p className='all-text'>Online service</p>
 								<p className='on-price'>+$10/yr</p>
 							</div>
 							<div className='ons-select'>
-								<p>Larger storage</p>
+								<p className='all-text'>Larger storage</p>
 								<p className='on-price'>+$20/yr</p>
 							</div>
 						</div>
 					</div>
 					<div className='total-price'>
-						<p>Total (per year)</p>
+						<p className='all-text'>Total (per year)</p>
 						<p id='total-price'>$120/yr</p>
 					</div>
 				</div>

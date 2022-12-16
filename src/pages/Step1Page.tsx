@@ -7,7 +7,7 @@ function Step1Page() {
 	return (
 		<div className='container-pri'>
 			<h1>Personal info</h1>
-			<span>Please provide your name, email address, and Phone number.</span>
+			<p className='sub-titulo all-text'>Please provide your name, email address, and Phone number.</p>
 			<form className='container-sec'>
 				<div className='cont-inp'>
 					<label htmlFor='name'>Name</label>

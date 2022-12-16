@@ -6,11 +6,6 @@
     flex-direction: column;
     justify-content: space-between;
 
-    p{
-        color: $secondary-color;
-        font-weight: 400;
-    }
-
     .total-options{
         background-color: $third-color;
         border-radius: 10px;
@@ -48,7 +43,6 @@
                 height: 30%;
 
                 p{
-                    font-weight: lighter;
                     font-size: 1.2rem;
                 }
 
@@ -69,10 +63,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-
-        p{
-            font-weight: lighter;
-        }
 
         #total-price{
             color: $checkbox-color;

@@ -18,8 +18,8 @@ function App() {
 								<Link to='/'>1</Link>
 							</div>
 							<div className='text-step'>
-								<span>STEP 1</span>
-								<Link to='/'><p>YOUR INFO</p></Link>
+								<p className='step-p'>STEP 1</p>
+								<Link to='/'><p className='step-p2'>YOUR INFO</p></Link>
 							</div>
 						</div>
 						<div className='step'>
@@ -27,8 +27,8 @@ function App() {
 								<Link to='/step2'>2</Link>
 							</div>
 							<div className='text-step'>
-								<span>STEP 2</span>
-								<Link to='/step2'><p>SELECT PLAN</p></Link>
+								<p className='step-p'>STEP 2</p>
+								<Link to='/step2'><p className='step-p2'>SELECT PLAN</p></Link>
 							</div>
 						</div>
 						<div className='step'>
@@ -36,8 +36,8 @@ function App() {
 								<Link to='/step3'>3</Link>
 							</div>
 							<div className='text-step'>
-								<span>STEP 3</span>
-								<Link to='/step3'><p>ADD-ONS</p></Link>
+								<p className='step-p'>STEP 3</p>
+								<Link to='/step3'><p className='step-p2'>ADD-ONS</p></Link>
 							</div>
 						</div>
 						<div className='step'>
@@ -45,8 +45,8 @@ function App() {
 								<Link to='/step4'>4</Link>
 							</div>
 							<div className='text-step'>
-								<span>STEP 4</span>
-								<Link to='/step4'><p>SUMMARY</p></Link>
+								<p className='step-p'>STEP 4</p>
+								<Link to='/step4'><p className='step-p2'>SUMMARY</p></Link>
 							</div>
 						</div>
 					</div>

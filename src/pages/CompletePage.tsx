@@ -9,7 +9,7 @@ export default function CompletePage() {
 		<div className='complete'>
 			<img src={Complete} alt='complete'></img>
 			<h1>Thank You!</h1>
-			<p>Thanks for confirming your subscription! We hope you have
+			<p className='all-text'>Thanks for confirming your subscription! We hope you have
                 fun using our platform. If you ever need support, please feel
                 free to email us at support@loremgaming.com.</p>
 		</div>

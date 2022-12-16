@@ -48,8 +48,16 @@
                 width: 100%;
                 height: 20%;
 
-                span{
-                    color: #AEAEAE;
+                .text-step{
+                    .step-p{
+                        color: #bdbdbd;
+                        font-weight: 400;
+                    }
+
+                    .step-p2{
+                        color: $bg-color;
+                        font-weight: bold;
+                    }
                 }
 
                 .step-number{
@@ -108,24 +116,18 @@ h1{
     color: $primary-color;
 }
 
-span{
+.sub-titulo{
     margin-bottom: 6%;
-    font-size: 1rem;
+    font-size: 1.3rem;
+}
+
+.all-text{
     color: $secondary-color;
+    font-weight: 400;
 }
 
 label{
     color: $primary-color;
-}
-
-span{
-    color: $secondary-color;
-    font-weight: lighter;
-}
-p{
-    color: $bg-color;
-    font-weight: 500;
-    cursor: pointer;
 }
 
 button{
