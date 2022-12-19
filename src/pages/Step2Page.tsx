@@ -6,8 +6,7 @@ import IconAdvanced from '../images/icon-advanced.svg';
 import IconPro from '../images/icon-pro.svg';
 
 import './styles/step2.scss';
-import ButtonNext from '../components/ButtonNext';
-import ButtonBack from '../components/ButtonBack';
+import Button from '../components/Button';
 
 function Step2Page() {
 	return (
@@ -54,8 +53,8 @@ function Step2Page() {
 					</div>
 				</div>
 				<div className='btn-cont'>
-					<ButtonBack/>
-					<ButtonNext nav='' text='Next Step'/>
+					<Button id='go-back' nav='/' text='Go Back' />
+					<Button id='go-next' nav='/step3' text='Next Step'/>
 				</div>
 			</div>
 		</div>

@@ -3,10 +3,11 @@ import { useNavigate } from 'react-router-dom';
 
 type typeProps = {
     nav: string,
-    text: string
+    text: string,
+    id:string
 }
 
-function ButtonNext({nav, text}: typeProps) {
+function Button({nav, text, id}: typeProps) {
 
 	const navigate = useNavigate();
 
@@ -18,10 +19,10 @@ function ButtonNext({nav, text}: typeProps) {
 	}
 
 	return (
-		<button id='next-step' type='submit' onClick={handleClick}>
+		<button id={id} type='submit' onClick={handleClick} className='teste'>
 			{text}
 		</button>
 	);
 }
 
-export default ButtonNext;
+export default Button;

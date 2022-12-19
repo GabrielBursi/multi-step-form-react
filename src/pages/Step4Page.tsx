@@ -1,6 +1,5 @@
 import React from 'react';
-import ButtonBack from '../components/ButtonBack';
-import ButtonNext from '../components/ButtonNext';
+import Button from '../components/Button';
 
 import './styles/step4.scss';
 
@@ -33,8 +32,8 @@ function Step4Page() {
 					</div>
 				</div>
 				<div className='btn-cont'>
-					<ButtonBack />
-					<ButtonNext nav='/complete' text='Complete' />
+					<Button id='go-back' nav='/step3' text='Go Back' />
+					<Button id='go-next' nav='/complete' text='Complete' />
 				</div>
 			</div>
 		</div>
