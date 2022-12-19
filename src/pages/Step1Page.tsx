@@ -1,3 +1,4 @@
+import { log } from 'console';
 import React, { useState } from 'react';
 import Button from '../components/Button';
 
@@ -9,16 +10,20 @@ function Step1Page() {
 	const [email, setEmail] = useState('');
 	const [phone, setPhone] = useState('');
 
-
 	function handleSubmit(){
-		console.log('teste');
+		const inputs = Array.from(document.querySelectorAll('input'));
+		inputs.forEach(element => {
+			if(element.value === ''){
+				console.log('Vazio');
+			}
+		});
 	}
-    
+
 	return (
 		<div className='container-pri'>
 			<h1>Personal info</h1>
 			<p className='sub-titulo all-text'>Please provide your name, email address, and Phone number.</p>
-			<form className='container-sec' onSubmit={()=>handleSubmit}>
+			<form className='container-sec'>
 				<div className='cont-inp'>
 					<label htmlFor='name'>Name</label>
 					<input 

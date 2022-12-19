@@ -4,10 +4,10 @@ import { useNavigate } from 'react-router-dom';
 type typeProps = {
     nav: string,
     text: string,
-    id:string
+    id:string,
 }
 
-function Button({nav, text, id}: typeProps) {
+function Button({ nav, text, id }: typeProps) {
 
 	const navigate = useNavigate();
 

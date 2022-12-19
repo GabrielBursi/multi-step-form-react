@@ -68,8 +68,16 @@
         font-size: 1.2rem;
 
         .period{
-            color: $primary-color;
+            color: $secondary-color;
+            width: 20%;
+
         }
+
+        .select-plan{
+            color: $primary-color;
+            font-weight: bold;
+        }
+
     }
 }
 
@@ -77,8 +85,8 @@
 .switch {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 34px;
+    width: 50px;
+    height: 24px;
 }
 /* Hide default HTML checkbox */
 .switch input {
@@ -103,13 +111,13 @@
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
+  height: 16px;
+  width: 16px;
   left: 4px;
   bottom: 4px;
   background-color: white;
   -webkit-transition: .4s;
-  transition: .4s;
+  transition: .2s;
 }
 
 input:checked + .slider {
