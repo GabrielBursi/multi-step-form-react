@@ -14,7 +14,6 @@ function Button({ nav, text, id }: typeProps) {
 	function handleClick(e: React.FormEvent){
 		e.preventDefault();
 		if(nav === '') return;
-
 		navigate(nav);
 	}
 

@@ -1,4 +1,3 @@
-import { log } from 'console';
 import React, { useState } from 'react';
 import Button from '../components/Button';
 
@@ -10,20 +9,26 @@ function Step1Page() {
 	const [email, setEmail] = useState('');
 	const [phone, setPhone] = useState('');
 
-	function handleSubmit(){
+	function handleSubmit(e: React.FormEvent){
+		e.preventDefault();
+
 		const inputs = Array.from(document.querySelectorAll('input'));
-		inputs.forEach(element => {
-			if(element.value === ''){
-				console.log('Vazio');
-			}
+		inputs.forEach(inp => {
+			if (inp.value !== ''){
+				inp.style.borderColor = '#6e6e6e';  
+			}else{
+				inp.style.borderColor = '#FF0000';
+			} 
 		});
+		const emptyInputs = inputs.filter(inp => inp.value === '');
+		return emptyInputs;
 	}
 
 	return (
 		<div className='container-pri'>
 			<h1>Personal info</h1>
 			<p className='sub-titulo all-text'>Please provide your name, email address, and Phone number.</p>
-			<form className='container-sec'>
+			<form className='container-sec' onSubmit={handleSubmit}>
 				<div className='cont-inp'>
 					<label htmlFor='name'>Name</label>
 					<input 
@@ -65,7 +70,7 @@ function Step1Page() {
 						value={phone} 
 						onChange={(e) => setPhone(e.target.value)} />
 				</div>
-				<Button id='go-next' nav='/step2' text='Next Step'/>
+				<button id='go-next' type='submit'>Next Step</button>
 			</form>
 		</div>
 	);

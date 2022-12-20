@@ -32,7 +32,7 @@
         border-radius: 10px;
         background: url('../images/bg-sidebar-desktop.svg');
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: auto 100%;
 
         .cont-steps{
             height: 50%;
@@ -140,6 +140,10 @@ button{
     background-color: $primary-color;
     color: $bg-color;
     border: none;
+    transition: .4s;
+    &:hover{
+        background-color: $checkbox-color;
+    }
 }
 
 .btn-cont{
@@ -149,6 +153,10 @@ button{
     #go-next{
         height: 66.92px;
         width: 35%;
+        transition: .4s;
+        &:hover{
+            background-color: $checkbox-color;
+        }
     }
     #go-back{
         border: none;
