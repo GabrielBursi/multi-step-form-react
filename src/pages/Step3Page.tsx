@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import Button from '../components/Button';
+import { ContextState } from '../context/Context';
 
 import './styles/step3.scss';
 
 function Step3Page() {
+
+	const { setStep3, step3 } = useContext(ContextState);
+
+	useEffect(() => {
+		setStep3(!step3);
+
+		return () => setStep3(false);
+	}, []);
+
 	return (
 		<div className='container-pri'>
 			<h1>Pick add-ons</h1>

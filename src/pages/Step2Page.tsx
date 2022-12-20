@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import IconArcade from '../images/icon-arcade.svg';
 import IconAdvanced from '../images/icon-advanced.svg';
@@ -6,10 +6,19 @@ import IconPro from '../images/icon-pro.svg';
 
 import './styles/step2.scss';
 import Button from '../components/Button';
+import { ContextState } from '../context/Context';
 
 function Step2Page() {
 
 	const [selectPlan, setSelectPlan] = useState(true);
+
+	const { setStep2, step2 } = useContext(ContextState);
+
+	useEffect(() => {
+		setStep2(!step2);
+
+		return () => setStep2(false);
+	}, []);
     
 	return (
 		<div className='container-pri'>

@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import Button from '../components/Button';
+import React, { useState, useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ContextState } from '../context/Context';
 
 import './styles/step1.scss';
 
@@ -8,6 +9,16 @@ function Step1Page() {
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [phone, setPhone] = useState('');
+
+	const { setStep1 } = useContext(ContextState);
+
+	useEffect(() => {
+		setStep1(true);
+
+		return () => setStep1(false);
+	}, []);
+
+	const navigate = useNavigate();
 
 	function handleSubmit(e: React.FormEvent){
 		e.preventDefault();
@@ -20,8 +31,9 @@ function Step1Page() {
 				inp.style.borderColor = '#FF0000';
 			} 
 		});
+
 		const emptyInputs = inputs.filter(inp => inp.value === '');
-		return emptyInputs;
+		if (!emptyInputs.length) navigate('/step2');
 	}
 
 	return (

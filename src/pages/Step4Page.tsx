@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import Button from '../components/Button';
+import { ContextState } from '../context/Context';
 
 import './styles/step4.scss';
 
 function Step4Page() {
+
+	const { setStep4, step4 } = useContext(ContextState);
+
+	useEffect(() => {
+		setStep4(!step4);
+
+		return () => setStep4(false); 
+	}, []);
+
 	return (
 		<div className='container-pri'>
 			<h1>Finishing up</h1> 

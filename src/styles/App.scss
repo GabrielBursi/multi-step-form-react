@@ -90,6 +90,24 @@
     }
 }
 
+.hover-number{
+    border-radius: 100%;
+    width: 12%;
+    height: 65%;
+    margin-right: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #bee2fd;
+    color: $primary-color;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    a{
+        color: $primary-color;
+    }
+}
+
 .container-pri{
     padding: 4% 10%;
     width: 70%;
