@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import IconArcade from '../images/icon-arcade.svg';
 import IconAdvanced from '../images/icon-advanced.svg';
@@ -10,9 +10,9 @@ import { ContextState } from '../context/Context';
 
 function Step2Page() {
 
-	const [selectPlan, setSelectPlan] = useState(true);
 
 	const { setStep2, step2 } = useContext(ContextState);
+	const { selectPlan, setSelectPlan } = useContext(ContextState);
 
 	useEffect(() => {
 		setStep2(!step2);

@@ -59,7 +59,7 @@ function Step1Page() {
 				<div className='cont-inp'> 
 					<label htmlFor='email'>Email Address</label>
 					<input 
-						type="email" 
+						type="text" 
 						name="email" 
 						id="email" 
 						className='inp' 

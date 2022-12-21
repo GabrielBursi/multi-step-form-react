@@ -10,9 +10,11 @@ function Provider({children}) {
 	const [step2, setStep2] = useState(false);
 	const [step3, setStep3] = useState(false);
 	const [step4, setStep4] = useState(false);
+	const [selectPlan, setSelectPlan] = useState(true);
+	const priceTotal = [];
 
 	return (
-		<ContextState.Provider value={{step1,setStep1,step2,setStep2,step3,setStep3,step4,setStep4}}>
+		<ContextState.Provider value={{step1,setStep1,step2,setStep2,step3,setStep3,step4,setStep4, selectPlan, setSelectPlan, priceTotal}}>
 			{children}
 		</ContextState.Provider>
 	);

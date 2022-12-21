@@ -7,6 +7,7 @@ import './styles/step4.scss';
 function Step4Page() {
 
 	const { setStep4, step4 } = useContext(ContextState);
+	const { selectPlan } = useContext(ContextState);
 
 	useEffect(() => {
 		setStep4(!step4);
@@ -22,23 +23,23 @@ function Step4Page() {
 				<div className='finishing-up'>
 					<div className='total-options'>
 						<div className='plan-choice'>
-							<p>Arcade(Yearly)</p>
-							<p>$90/yr</p>
+							<p>(PLANO ESCOLHIDO){`${selectPlan ? '(Monthly)' : '(Yearly)'}`}</p>
+							<p>(PREÇO)</p>
 						</div>
 						<div className='ons-choice'>
 							<div className='ons-select'>
-								<p className='all-text'>Online service</p>
-								<p className='on-price'>+$10/yr</p>
+								<p className='all-text'>(NOME DO SERVIÇO)</p>
+								<p className='on-price'>+(PREÇO DO SERVIÇO)</p>
 							</div>
 							<div className='ons-select'>
-								<p className='all-text'>Larger storage</p>
-								<p className='on-price'>+$20/yr</p>
+								<p className='all-text'>(NOME DO SERVIÇO)</p>
+								<p className='on-price'>+(PREÇO DO SERVIÇO)</p>
 							</div>
 						</div>
 					</div>
 					<div className='total-price'>
-						<p className='all-text'>Total (per year)</p>
-						<p id='total-price'>$120/yr</p>
+						<p className='all-text'>{`Total ${selectPlan ? '(per month)': '(per year)'}`}</p>
+						<p id='total-price'>(TOTAL)</p>
 					</div>
 				</div>
 				<div className='btn-cont'>
