@@ -13,12 +13,32 @@ function Step2Page() {
 
 	const { setStep2, step2 } = useContext(ContextState);
 	const { selectPlan, setSelectPlan } = useContext(ContextState);
+	const { setNamePlan, setPricePlan } = useContext(ContextState);
+
 
 	useEffect(() => {
 		setStep2(!step2);
 
 		return () => setStep2(false);
 	}, []);
+
+	function handlePlan(id: number){
+		const namePlan = Array.from(document.querySelectorAll('.name-plan'));
+		setNamePlan(namePlan[id].textContent);
+
+		const pricePlan = Array.from(document.querySelectorAll('.price'));
+		setPricePlan(pricePlan[id].textContent);
+
+		changeSelected(id);
+	}
+
+	function changeSelected(id: number){
+		const planContainer = Array.from(document.querySelectorAll('.plan-options'));
+		planContainer.forEach(div => {
+			if (div.classList.contains('selected')) div.classList.remove('selected');
+		});
+		planContainer[id].classList.toggle('selected');
+	}
     
 	return (
 		<div className='container-pri'>
@@ -27,7 +47,7 @@ function Step2Page() {
 			<div className='container-sec'>
 				<div className='container-ter'>
 					<div className="options">   
-						<div className='plan-options'>
+						<div className='plan-options' onClick={()=>handlePlan(0)}>
 							<img src={IconArcade} alt='arcade-icon'></img>
 							<div className='plan'>
 								<p className='name-plan'>Arcade</p>
@@ -35,7 +55,7 @@ function Step2Page() {
 								{!selectPlan && <p className='bonus'>2 months free</p>}
 							</div>
 						</div>
-						<div className='plan-options'>
+						<div className='plan-options' onClick={()=>handlePlan(1)}>
 							<img src={IconAdvanced} alt='arcade-icon'></img>
 							<div className='plan'>
 								<p className='name-plan'>Advanced</p>
@@ -43,11 +63,11 @@ function Step2Page() {
 								{!selectPlan && <p className='bonus'>2 months free</p>}
 							</div>
 						</div>
-						<div className='plan-options'>
+						<div className='plan-options' onClick={()=>handlePlan(2)}>
 							<img src={IconPro} alt='arcade-icon'></img>
 							<div className='plan'>
 								<p className='name-plan'>Pro</p>
-								<p className='all-text'>{selectPlan ? '$15/mo': '$150/yr'}</p>
+								<p className='price all-text'>{selectPlan ? '$15/mo': '$150/yr'}</p>
 								{!selectPlan && <p className='bonus'>2 months free</p>}
 							</div>
 						</div>

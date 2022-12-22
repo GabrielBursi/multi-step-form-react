@@ -8,6 +8,7 @@ function Step4Page() {
 
 	const { setStep4, step4 } = useContext(ContextState);
 	const { selectPlan } = useContext(ContextState);
+	const { namePlan, pricePlan } = useContext(ContextState);
 
 	useEffect(() => {
 		setStep4(!step4);
@@ -23,8 +24,8 @@ function Step4Page() {
 				<div className='finishing-up'>
 					<div className='total-options'>
 						<div className='plan-choice'>
-							<p>(PLANO ESCOLHIDO){`${selectPlan ? '(Monthly)' : '(Yearly)'}`}</p>
-							<p>(PREÇO)</p>
+							<p>{namePlan}{`${selectPlan ? '(Monthly)' : '(Yearly)'}`}</p>
+							<p>{pricePlan}</p>
 						</div>
 						<div className='ons-choice'>
 							<div className='ons-select'>

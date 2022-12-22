@@ -26,7 +26,7 @@
                 width: 4.5rem;
             }
         }
-
+        
         img{
             width:4rem;
             transition: 0.1s;
@@ -53,6 +53,15 @@
         }
     }
 }
+
+.selected{
+    background-color: $third-color;
+    border: 1px solid $checkbox-color !important;
+    img{
+        width: 4.5rem;
+    }
+}
+
 .toggle{
     height: 20%;
     background-color: $third-color;
