@@ -5,14 +5,18 @@ type typeProps = {
     nav: string,
     text: string,
     id:string,
+    verifyPlan? : () => boolean
 }
 
-function Button({ nav, text, id }: typeProps) {
+function Button({ nav, text, id, verifyPlan }: typeProps) {
 
 	const navigate = useNavigate();
 
 	function handleClick(e: React.FormEvent){
 		e.preventDefault();
+		if(verifyPlan){
+			if(verifyPlan()) return;
+		}
 		if(nav === '') return;
 		navigate(nav);
 	}

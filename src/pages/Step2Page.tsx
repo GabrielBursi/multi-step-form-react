@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, } from 'react';
 
 import IconArcade from '../images/icon-arcade.svg';
 import IconAdvanced from '../images/icon-advanced.svg';
@@ -10,7 +10,6 @@ import { ContextState } from '../context/Context';
 
 function Step2Page() {
 
-
 	const { setStep2, step2 } = useContext(ContextState);
 	const { selectPlan, setSelectPlan } = useContext(ContextState);
 	const { setNamePlan, setPricePlan } = useContext(ContextState);
@@ -18,7 +17,6 @@ function Step2Page() {
 
 	useEffect(() => {
 		setStep2(!step2);
-
 		return () => setStep2(false);
 	}, []);
 
@@ -37,9 +35,21 @@ function Step2Page() {
 		planContainer.forEach(div => {
 			if (div.classList.contains('selected')) div.classList.remove('selected');
 		});
-		planContainer[id].classList.toggle('selected');
+		planContainer[id].classList.add('selected');
 	}
     
+	function verifyPlan(): boolean{
+		const planContainer = Array.from(document.querySelectorAll('.plan-options'));
+		const notice =  document.getElementById('plan-empty');
+
+		const planEmpty = planContainer.filter(div => !div.classList.contains('selected'));
+		if(planEmpty.length === 3){
+            notice!.style.display = 'block';
+            return true;
+		}
+		return false;
+	}
+
 	return (
 		<div className='container-pri'>
 			<h1>Select your plan</h1>
@@ -83,9 +93,10 @@ function Step2Page() {
 						</div>
 					</div>
 				</div>
+				<p className='all-text' id='plan-empty'>You need to choose a plan.</p>
 				<div className='btn-cont'>
 					<Button id='go-back' nav='/' text='Go Back' />
-					<Button id='go-next' nav='/step3' text='Next Step'/>
+					<Button id='go-next' nav='/step3' text='Next Step' verifyPlan={verifyPlan}/>
 				</div>
 			</div>
 		</div>

@@ -8,7 +8,8 @@ function Step3Page() {
 
 	const { selectPlan } = useContext(ContextState);
 	const { setStep3, step3 } = useContext(ContextState);
-	const { priceTotal } = useContext(ContextState);
+	const { choiceOns, setChoiceOns } = useContext(ContextState);
+	const { selectedChoiceOns } = useContext(ContextState);
 
 	useEffect(() => {
 		setStep3(!step3);
@@ -19,18 +20,21 @@ function Step3Page() {
 	function handleCheckBox(id: number){
 		const checkbox = Array.from(document.querySelectorAll('input'));
 		const price = Array.from(document.querySelectorAll('.price-js'));
+		const nameService = Array.from(document.querySelectorAll('.name-service'));
 
 		if (checkbox[id].checked === true) {
 			checkbox[id].checked = false;
 
-			const index = priceTotal.indexOf(price[id].textContent);
-			priceTotal.splice(index,1);
+			//!selectedChoiceOns.splice(id,1); excluir aqui
 		}else{
 			checkbox[id].checked = true;
 
-			const price = Array.from(document.querySelectorAll('.plus-price'));
-			priceTotal.push(price[id].textContent);
+			selectedChoiceOns.push({price:price[id].textContent, name: nameService[id].textContent});
 		}
+        
+		console.log(selectedChoiceOns);
+		//setChoiceOns(selectedChoiceOns);
+        
 	}
 
 	return (

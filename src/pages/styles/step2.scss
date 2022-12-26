@@ -62,6 +62,12 @@
     }
 }
 
+#plan-empty{
+    display: none;
+    font-weight: 600;
+    color: #ff3e3e;
+}
+
 .toggle{
     height: 20%;
     background-color: $third-color;

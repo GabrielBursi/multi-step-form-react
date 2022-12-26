@@ -13,7 +13,8 @@ function Provider({children}) {
 	const [selectPlan, setSelectPlan] = useState(true);
 	const [namePlan, setNamePlan] = useState('Arcade');
 	const [pricePlan, setPricePlan] = useState('$9/mo');
-	const priceTotal = [];
+	const [choiceOns, setChoiceOns] = useState([]);
+	const selectedChoiceOns = [];
 
 	return (
 		<ContextState.Provider value={{
@@ -27,11 +28,13 @@ function Provider({children}) {
 			setStep4, 
 			selectPlan, 
 			setSelectPlan, 
-			priceTotal,
+			choiceOns,
+			setChoiceOns,
 			namePlan,
 			setNamePlan,
 			pricePlan,
-			setPricePlan
+			setPricePlan,
+			selectedChoiceOns
 		}}>
 			{children}
 		</ContextState.Provider>

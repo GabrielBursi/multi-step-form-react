@@ -2,6 +2,8 @@ import React, { useContext, useEffect } from 'react';
 import Button from '../components/Button';
 import { ContextState } from '../context/Context';
 
+import OnsType from '../types/OnsType';
+
 import './styles/step4.scss';
 
 function Step4Page() {
@@ -9,6 +11,7 @@ function Step4Page() {
 	const { setStep4, step4 } = useContext(ContextState);
 	const { selectPlan } = useContext(ContextState);
 	const { namePlan, pricePlan } = useContext(ContextState);
+	const { choiceOns } = useContext(ContextState);
 
 	useEffect(() => {
 		setStep4(!step4);
@@ -28,14 +31,22 @@ function Step4Page() {
 							<p>{pricePlan}</p>
 						</div>
 						<div className='ons-choice'>
-							<div className='ons-select'>
-								<p className='all-text'>(NOME DO SERVIÇO)</p>
-								<p className='on-price'>+(PREÇO DO SERVIÇO)</p>
-							</div>
-							<div className='ons-select'>
-								<p className='all-text'>(NOME DO SERVIÇO)</p>
-								<p className='on-price'>+(PREÇO DO SERVIÇO)</p>
-							</div>
+							{choiceOns.length > 0 ? choiceOns.forEach((ons: OnsType) => (
+								<>
+									<div className='ons-select'>
+										<p className='all-text'>{ons.name}</p>
+										<p className='on-price'>+{ons.price}</p>
+									</div>
+									<div className='ons-select'>
+										<p className='all-text'>{ons.name}</p>
+										<p className='on-price'>+{ons.price}</p>
+									</div>
+									<div className='ons-select'>
+										<p className='all-text'>{ons.name}</p>
+										<p className='on-price'>+{ons.price}</p>
+									</div>
+								</>
+							)) : <span id='ons-empty'>NENHUM SERVIÇO ADICIONADO</span>}
 						</div>
 					</div>
 					<div className='total-price'>
