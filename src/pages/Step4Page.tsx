@@ -13,9 +13,18 @@ function Step4Page() {
 	const { namePlan, pricePlan } = useContext(ContextState);
 	const { choiceOns } = useContext(ContextState);
 
+	
+	const prices = choiceOns.map((element: OnsType) => {
+		const prices = element.price.replace('$','').replace('/mo','').replace('/yr','');
+		return (Number(prices));
+	});
+    
+	const priceNumber = pricePlan.replace('$', '').replace('/mo', '').replace('/yr', '');
+	const soma = prices.reduce((soma, atual) => soma + atual, 0) + Number(priceNumber);
+
 	useEffect(() => {
 		setStep4(!step4);
-
+        
 		return () => setStep4(false); 
 	}, []);
 
@@ -31,27 +40,17 @@ function Step4Page() {
 							<p>{pricePlan}</p>
 						</div>
 						<div className='ons-choice'>
-							{choiceOns.length > 0 ? choiceOns.forEach((ons: OnsType) => (
-								<>
-									<div className='ons-select'>
-										<p className='all-text'>{ons.name}</p>
-										<p className='on-price'>+{ons.price}</p>
-									</div>
-									<div className='ons-select'>
-										<p className='all-text'>{ons.name}</p>
-										<p className='on-price'>+{ons.price}</p>
-									</div>
-									<div className='ons-select'>
-										<p className='all-text'>{ons.name}</p>
-										<p className='on-price'>+{ons.price}</p>
-									</div>
-								</>
+							{choiceOns.length > 0 ? choiceOns.map((ons: OnsType) => (
+								<div className='ons-select' key={ons.name}>
+									<p className='all-text'>{ons.name}</p>
+									<p className='on-price'>+{ons.price}</p>
+								</div>
 							)) : <span id='ons-empty'>NENHUM SERVIÇO ADICIONADO</span>}
 						</div>
 					</div>
 					<div className='total-price'>
 						<p className='all-text'>{`Total ${selectPlan ? '(per month)': '(per year)'}`}</p>
-						<p id='total-price'>(TOTAL)</p>
+						<p id='total-price'>{`+$${soma}${selectPlan ? '/mo' : '/yr'}`}</p>
 					</div>
 				</div>
 				<div className='btn-cont'>

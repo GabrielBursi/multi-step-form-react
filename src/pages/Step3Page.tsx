@@ -4,11 +4,12 @@ import { ContextState } from '../context/Context';
 
 import './styles/step3.scss';
 
+import OnsType from '../types/OnsType';
+
 function Step3Page() {
 
 	const { selectPlan } = useContext(ContextState);
 	const { setStep3, step3 } = useContext(ContextState);
-	const { choiceOns, setChoiceOns } = useContext(ContextState);
 	const { selectedChoiceOns } = useContext(ContextState);
 
 	useEffect(() => {
@@ -25,16 +26,13 @@ function Step3Page() {
 		if (checkbox[id].checked === true) {
 			checkbox[id].checked = false;
 
-			//!selectedChoiceOns.splice(id,1); excluir aqui
+			//! const excludeOns = selectedChoiceOns.filter((item: OnsType) => item.name === nameService[id].textContent);
+			//! selectedChoiceOns.splice(id,1);
 		}else{
 			checkbox[id].checked = true;
 
 			selectedChoiceOns.push({price:price[id].textContent, name: nameService[id].textContent});
 		}
-        
-		console.log(selectedChoiceOns);
-		//setChoiceOns(selectedChoiceOns);
-        
 	}
 
 	return (
