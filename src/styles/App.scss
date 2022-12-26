@@ -52,11 +52,13 @@
                     .step-p{
                         color: #bdbdbd;
                         font-weight: 400;
+                        cursor: default;
                     }
 
                     .step-p2{
                         color: $bg-color;
                         font-weight: bold;
+                        cursor: default;
                     }
                 }
 
@@ -71,18 +73,15 @@
                     justify-content: center;
                     align-items: center;
                     transition: .4s;
-                    cursor: pointer;
                     font-weight: 500;
+                    color: $bg-color;
                     &:hover{
                         background-color: #bee2fd;
                         color: $primary-color;
                         border: none;
-                        a{
-                            color: $primary-color;
-                        }
                     }
-                    a{
-                        color: $bg-color;
+                    p{
+                        cursor: default;
                     }
                 }
             }
@@ -102,8 +101,8 @@
     color: $primary-color;
     border: none;
     font-weight: 500;
-    cursor: pointer;
-    a{
+    p{
+        cursor: default;
         color: $primary-color;
     }
 }

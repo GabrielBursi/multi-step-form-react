@@ -1,5 +1,4 @@
 import React, {useContext} from 'react';
-import { Link, useNavigate } from 'react-router-dom';
 import RoutesSteps from './Routes';
 
 import { ContextState } from './context/Context';
@@ -7,8 +6,6 @@ import { ContextState } from './context/Context';
 import './styles/App.scss';
 
 function App() {
-
-	const navigate = useNavigate();
 
 	const { step1, step2, step3, step4 } = useContext(ContextState);
 
@@ -18,39 +15,39 @@ function App() {
 				<aside className='aside'>
 					<div className='cont-steps'>
 						<div className='step'>
-							<div className={`${step1 ? 'hover-number' : 'step-number'}`} onClick={()=>navigate('/')}>
-								<Link to='/'>1</Link>
+							<div className={`${step1 ? 'hover-number' : 'step-number'}`}>
+								<p>1</p>
 							</div>
 							<div className='text-step'>
 								<p className='step-p'>STEP 1</p>
-								<Link to='/'><p className='step-p2'>YOUR INFO</p></Link>
+								<p><p className='step-p2'>YOUR INFO</p></p>
 							</div>
 						</div>
 						<div className='step'>
-							<div className={`${step2 ? 'hover-number' : 'step-number'}`} onClick={()=>navigate('/step2')}>
-								<Link to='/step2'>2</Link>
+							<div className={`${step2 ? 'hover-number' : 'step-number'}`}>
+								<p>2</p>
 							</div>
 							<div className='text-step'>
 								<p className='step-p'>STEP 2</p>
-								<Link to='/step2'><p className='step-p2'>SELECT PLAN</p></Link>
+								<p><p className='step-p2'>SELECT PLAN</p></p>
 							</div>
 						</div>
 						<div className='step'>
-							<div className={`${step3 ? 'hover-number' : 'step-number'}`} onClick={()=>navigate('/step3')}>
-								<Link to='/step3'>3</Link>
+							<div className={`${step3 ? 'hover-number' : 'step-number'}`}>
+								<p>3</p>
 							</div>
 							<div className='text-step'>
 								<p className='step-p'>STEP 3</p>
-								<Link to='/step3'><p className='step-p2'>ADD-ONS</p></Link>
+								<p><p className='step-p2'>ADD-ONS</p></p>
 							</div>
 						</div>
 						<div className='step'>
-							<div className={`${step4 ? 'hover-number' : 'step-number'}`} onClick={()=>navigate('/step4')}>
-								<Link to='/step4'>4</Link>
+							<div className={`${step4 ? 'hover-number' : 'step-number'}`}>
+								<p>4</p>
 							</div>
 							<div className='text-step'>
 								<p className='step-p'>STEP 4</p>
-								<Link to='/step4'><p className='step-p2'>SUMMARY</p></Link>
+								<p><p className='step-p2'>SUMMARY</p></p>
 							</div>
 						</div>
 					</div>
