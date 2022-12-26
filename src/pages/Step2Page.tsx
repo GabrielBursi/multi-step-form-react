@@ -17,6 +17,7 @@ function Step2Page() {
 
 	useEffect(() => {
 		setStep2(!step2);
+		setSelectPlan(true);
 		return () => setStep2(false);
 	}, []);
 
