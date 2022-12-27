@@ -1,16 +1,13 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ContextState } from '../context/Context';
 
 import './styles/step1.scss';
 
 function Step1Page() {
-    
-	const [name, setName] = useState('');
-	const [email, setEmail] = useState('');
-	const [phone, setPhone] = useState('');
 
 	const { setStep1 } = useContext(ContextState);
+	const { name, setName, phone, setPhone, email, setEmail } = useContext(ContextState);
 
 	useEffect(() => {
 		setStep1(true);
