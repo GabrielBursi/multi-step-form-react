@@ -1,13 +1,13 @@
 import React, { useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ChoiceOptionsContext } from '../context/ChoiceOptionsContext';
+import { FormContext, StepsContext } from '../context';
 
 import './styles/step1.scss';
 
 function Step1Page() {
 
-	const { setStep1 } = useContext(ChoiceOptionsContext);
-	const { name, setName, phone, setPhone, email, setEmail } = useContext(ChoiceOptionsContext);
+	const { setStep1 } = useContext(StepsContext);
+	const { name, setName, phone, setPhone, email, setEmail } = useContext(FormContext);
 
 	useEffect(() => {
 		setStep1(true);

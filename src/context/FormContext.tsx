@@ -9,7 +9,7 @@ interface ContextData {
     setEmail: (value: string) => void,
 }
 
-export const FormContextContext = createContext({} as ContextData);
+export const FormContext = createContext({} as ContextData);
 
 export function FormContextContextProvider({ children }) {
 
@@ -18,7 +18,7 @@ export function FormContextContextProvider({ children }) {
     const [phone, setPhone] = useState('');
 
     return (
-        <FormContextContext.Provider value={{
+        <FormContext.Provider value={{
             name,
             setName,
             phone,
@@ -27,6 +27,6 @@ export function FormContextContextProvider({ children }) {
             setEmail
         }}>
             {children}
-        </FormContextContext.Provider>
+        </FormContext.Provider>
     );
 }

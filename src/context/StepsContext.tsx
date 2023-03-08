@@ -11,7 +11,7 @@ interface ContextData {
     setStep4: (value: boolean) => void,
 }
 
-export const StepsContextContext = createContext({} as ContextData);
+export const StepsContext = createContext({} as ContextData);
 
 export function StepsContextContextProvider({ children }) {
 
@@ -21,7 +21,7 @@ export function StepsContextContextProvider({ children }) {
     const [step4, setStep4] = useState(false);
 
     return (
-        <StepsContextContext.Provider value={{
+        <StepsContext.Provider value={{
             step1,
             setStep1,
             step2,
@@ -32,6 +32,6 @@ export function StepsContextContextProvider({ children }) {
             setStep4,
         }}>
             {children}
-        </StepsContextContext.Provider>
+        </StepsContext.Provider>
     );
 }

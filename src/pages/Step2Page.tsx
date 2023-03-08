@@ -6,13 +6,12 @@ import IconPro from '../images/icon-pro.svg';
 
 import './styles/step2.scss';
 import Button from '../components/Button';
-import { ContextState } from '../context/Context';
+import { ChoiceOptionsContext, StepsContext } from '../context';
 
 function Step2Page() {
 
-	const { setStep2, step2 } = useContext(ContextState);
-	const { selectPlan, setSelectPlan } = useContext(ContextState);
-	const { setNamePlan, setPricePlan } = useContext(ContextState);
+	const { setStep2, step2 } = useContext(StepsContext);
+	const { selectPlan, setSelectPlan, setNamePlan, setPricePlan } = useContext(ChoiceOptionsContext);
 
 
 	useEffect(() => {

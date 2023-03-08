@@ -1,16 +1,14 @@
 import React, { useContext, useEffect } from 'react';
 import Button from '../components/Button';
-import { ContextState } from '../context/Context';
 
 import './styles/step3.scss';
 
-import OnsType from '../types/OnsType';
+import { ChoiceOptionsContext, StepsContext } from '../context';
 
 function Step3Page() {
 
-	const { selectPlan } = useContext(ContextState);
-	const { setStep3, step3 } = useContext(ContextState);
-	const { selectedChoiceOns } = useContext(ContextState);
+	const { selectPlan, selectedChoiceOns } = useContext(ChoiceOptionsContext);
+	const { setStep3, step3 } = useContext(StepsContext);
 
 	useEffect(() => {
 		setStep3(!step3);

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import Button from '../components/Button';
-import { ContextState } from '../context/Context';
+import { ChoiceOptionsContext, StepsContext } from '../context';
 
 import OnsType from '../types/OnsType';
 
@@ -8,10 +8,8 @@ import './styles/step4.scss';
 
 function Step4Page() {
 
-	const { setStep4, step4 } = useContext(ContextState);
-	const { selectPlan } = useContext(ContextState);
-	const { namePlan, pricePlan } = useContext(ContextState);
-	const { choiceOns } = useContext(ContextState);
+	const { setStep4, step4 } = useContext(StepsContext);
+	const { selectPlan, choiceOns, namePlan, pricePlan } = useContext(ChoiceOptionsContext);
 
 	
 	const prices = choiceOns.map((element: OnsType) => {
@@ -26,6 +24,7 @@ function Step4Page() {
 		setStep4(!step4);
         
 		return () => setStep4(false); 
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (
