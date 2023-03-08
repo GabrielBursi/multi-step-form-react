@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react';
+import { Children } from '../types/Children';
 import OnsType from '../types/OnsType';
 
 interface ContextData  {
@@ -15,7 +16,7 @@ interface ContextData  {
 
 export const ChoiceOptionsContext = createContext({} as ContextData);
 
-export function ChoiceOptionsContextProvider({children}) {
+export function ChoiceOptionsContextProvider({children}:Children) {
 
 	const [selectPlan, setSelectPlan] = useState(true);
 	const [namePlan, setNamePlan] = useState('Arcade');
@@ -35,7 +36,7 @@ export function ChoiceOptionsContextProvider({children}) {
 			setPricePlan,
 			selectedChoiceOns,
 		}}>
-			{children}
+			{children}:Children
 		</ChoiceOptionsContext.Provider>
 	);
 }

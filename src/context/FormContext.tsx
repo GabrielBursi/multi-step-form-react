@@ -26,7 +26,7 @@ export function FormContextContextProvider({ children }) {
             email,
             setEmail
         }}>
-            {children}
+            {children}:Children
         </FormContext.Provider>
     );
 }
