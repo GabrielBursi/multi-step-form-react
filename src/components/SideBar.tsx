@@ -16,7 +16,7 @@ export function SideBar({ steps }: SideBarProps) {
         <aside className='aside'>
             <div className='cont-steps'>
                 {steps.map(step => (
-                    <div className='step'>
+                    <div key={step.title} className='step'>
                         <div className={`${step.stepActive ? 'hover-number' : 'step-number'}`}>
                             <p>{step.stepPage}</p>
                         </div>

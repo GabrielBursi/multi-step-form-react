@@ -1,13 +1,29 @@
 import React, { useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FormContext, StepsContext } from '../context';
+import * as yup from 'yup'
+import InputMask from "react-input-mask";
+
+import '../TraducoesYup'
 
 import './styles/step1.scss';
+
+interface SchemaForm {
+	name: string,
+	email:string,
+	phone: string,
+}
+
+const schemaForm:yup.ObjectSchema<SchemaForm> = yup.object({
+	name: yup.string().required().min(2),
+	email: yup.string().required().email(),
+	phone: yup.string().required().matches(/^\([0-9]{2}\)\s9\s[0-9]{4}-[0-9]{4}$/)
+})
 
 function Step1Page() {
 
 	const { setStep1 } = useContext(StepsContext);
-	const { name, setName, phone, setPhone, email, setEmail } = useContext(FormContext);
+	const { name, setName, phone, setPhone, email, setEmail, setEmailError, setNameError, setPhoneError, emailError, nameError, phoneError } = useContext(FormContext);
 
 	useEffect(() => {
 		setStep1(true);
@@ -21,17 +37,23 @@ function Step1Page() {
 	function handleSubmit(e: React.FormEvent){
 		e.preventDefault();
 
-		const inputs = Array.from(document.querySelectorAll('input'));
-		inputs.forEach(inp => {
-			if (inp.value !== ''){
-				inp.style.borderColor = '#6e6e6e';  
-			}else{
-				inp.style.borderColor = '#FF0000';
-			} 
-		});
-
-		const emptyInputs = inputs.filter(inp => inp.value === '');
-		if (!emptyInputs.length) navigate('/step2');
+		schemaForm.validate({name, email, phone}, {abortEarly: false})
+			.then(() => { navigate('/step2') })
+			.catch((errors: yup.ValidationError) => {
+				errors.inner.forEach(error => {
+					switch (error.path) {
+						case 'name':
+							setNameError(error.message);
+							break
+						case 'email':
+							setEmailError(error.message);
+							break
+						case 'phone':
+							setPhoneError(error.message);
+							break
+					}
+				});
+			})
 	}
 
 	return (
@@ -42,17 +64,17 @@ function Step1Page() {
 				<div className='cont-inp'>
 					<label htmlFor='name'>Name</label>
 					<input 
-						
 						type="text" 
 						name="name" 
 						id="name" 
 						className='inp' 
-						placeholder='e.g. Gabriel Bursi' 
+						placeholder='Ex: Gabriel Bursi' 
 						autoComplete='off' 
 						maxLength={30} 
 						value={name} 
-						onChange={(e) => setName(e.target.value)}
+						onChange={(e) => {setName(e.target.value); setNameError('')}}
 					/>
+					<span className='error-name'>{nameError}</span>
 				</div>
 				<div className='cont-inp'> 
 					<label htmlFor='email'>Email Address</label>
@@ -61,24 +83,25 @@ function Step1Page() {
 						name="email" 
 						id="email" 
 						className='inp' 
-						placeholder='e.g. gabrielbursi@lorem.com' 
+						placeholder='Ex: gabrielbursi@lorem.com' 
 						autoComplete='off' 
 						maxLength={30} 
 						value={email} 
-						onChange={(e) => setEmail(e.target.value)} 
+						onChange={(e) => {setEmail(e.target.value); setEmailError('')}}
 					/>
+					<span className='error-name'>{emailError}</span>
 				</div>
 				<div className='cont-inp'> 
 					<label htmlFor='phone'>Phone Number</label>
-					<input 
-						type="tel" 
-						name="phone" 
-						id="phone" 
+					<InputMask
+						mask="(99) 9 9999-9999"
 						className='inp' 
-						placeholder='e.g. +1 234 567 890' 
-						autoComplete='off' 
-						value={phone} 
-						onChange={(e) => setPhone(e.target.value)} />
+						value={phone}
+						onChange={(e) => {setPhone(e.target.value); setPhoneError('')}}
+					>
+						<input placeholder='Ex: (99) 9 9999-9999' autoComplete='off' />
+					</InputMask>
+					<span className='error-name'>{phoneError}</span>
 				</div>
 				<button id='go-next' type='submit'>Next Step</button>
 			</form>

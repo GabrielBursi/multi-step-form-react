@@ -7,6 +7,12 @@ interface ContextData {
     setPhone: (value: string) => void,
     email: string,
     setEmail: (value: string) => void,
+    nameError: string, 
+    setNameError: (value: string) => void,
+    emailError: string, 
+    setEmailError: (value: string) => void,
+    phoneError: string, 
+    setPhoneError: (value: string) => void,
 }
 
 export const FormContext = createContext({} as ContextData);
@@ -17,6 +23,10 @@ export function FormContextContextProvider({ children }) {
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
 
+    const [nameError, setNameError] = useState('');
+    const [emailError, setEmailError] = useState('');
+    const [phoneError, setPhoneError] = useState('');
+
     return (
         <FormContext.Provider value={{
             name,
@@ -24,7 +34,13 @@ export function FormContextContextProvider({ children }) {
             phone,
             setPhone,
             email,
-            setEmail
+            setEmail,
+            nameError,
+            setNameError,
+            emailError,
+            setEmailError,
+            phoneError,
+            setPhoneError,
         }}>
             {children}:Children
         </FormContext.Provider>
