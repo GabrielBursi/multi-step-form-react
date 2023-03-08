@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import Provider from './context/Context';
+import { ProviderContext } from './context';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -10,9 +10,9 @@ const root = ReactDOM.createRoot(
 root.render(
 	<BrowserRouter>
 		<React.StrictMode>
-			<Provider>
+			<ProviderContext>
 				<App />
-			</Provider>
+			</ProviderContext>
 		</React.StrictMode>
 	</BrowserRouter>
 );
