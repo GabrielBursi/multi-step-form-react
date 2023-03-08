@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ContextState } from '../context/Context';
+import { ChoiceOptionsContext } from '../context';
 
 type typeProps = {
     nav: string,
@@ -13,8 +13,7 @@ function Button({ nav, text, id, verifyPlan }: typeProps) {
 
 	const navigate = useNavigate();
 
-	const { selectedChoiceOns } = useContext(ContextState);
-	const { setChoiceOns } = useContext(ContextState);
+	const { setChoiceOns, selectedChoiceOns } = useContext(ChoiceOptionsContext);
 
 	function handleClick(e: React.FormEvent){
 		e.preventDefault();

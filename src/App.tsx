@@ -1,13 +1,12 @@
 import React, {useContext} from 'react';
+import { StepsContext } from './context';
 import RoutesSteps from './Routes';
-
-import { ContextState } from './context/Context';
 
 import './styles/App.scss';
 
 function App() {
 
-	const { step1, step2, step3, step4 } = useContext(ContextState);
+	const { step1, step2, step3, step4 } = useContext(StepsContext);
 
 	return (
 		<div className='container'>
