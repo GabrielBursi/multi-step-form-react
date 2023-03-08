@@ -1,18 +1,19 @@
 import React, { useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ContextState } from '../context/Context';
+import { ChoiceOptionsContext } from '../context/ChoiceOptionsContext';
 
 import './styles/step1.scss';
 
 function Step1Page() {
 
-	const { setStep1 } = useContext(ContextState);
-	const { name, setName, phone, setPhone, email, setEmail } = useContext(ContextState);
+	const { setStep1 } = useContext(ChoiceOptionsContext);
+	const { name, setName, phone, setPhone, email, setEmail } = useContext(ChoiceOptionsContext);
 
 	useEffect(() => {
 		setStep1(true);
 
 		return () => setStep1(false);
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	const navigate = useNavigate();
